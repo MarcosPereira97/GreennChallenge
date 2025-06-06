@@ -1,10 +1,9 @@
-import { remove } from "cypress/types/lodash";
-
 export const SELECTORS = {
   login: {
     username: "[data-test=username]",
     password: "[data-test=password]",
     login_btn: "[data-test=login-button]",
+    message_error: 'div[class*="error-message-container"]',
   },
   grid: {
     grid_list: "[data-test='inventory-list']",

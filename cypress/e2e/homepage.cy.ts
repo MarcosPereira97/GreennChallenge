@@ -1,16 +1,9 @@
 describe("Homepage", () => {
-  let usuarios: any;
-
   beforeEach(() => {
-    cy.fixture("usuarios").then((dados) => {
-      usuarios = dados;
-      cy.visit("/");
-    });
+    cy.visit("/");
   });
 
-  it("Deve exibir imagens diferentes para cada produto", () => {
-    cy.login(usuarios.problem_user, usuarios.password);
-  });
+  it("Deve exibir imagens diferentes para cada produto", () => {});
 
   it("Deve permitir adicionar qualquer produto ao carrinho");
   it(
@@ -18,4 +11,6 @@ describe("Homepage", () => {
   );
   it('Produto 4 exibe "Item Not Found" e valor com caracteres inválidos');
   it('Botão "Add to cart" deve funcionar em todos os produtos');
+
+  it("Deve ordenar corretamente por preço, nome e outros critérios");
 });
