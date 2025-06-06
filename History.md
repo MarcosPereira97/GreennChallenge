@@ -5,6 +5,7 @@
 ### Adicionado
 
 - Testes de validação de produtos (ordenação de itens, validações de imagens, adicionar produtos ao carrinho.)
+- Comandos customizados: `validateDifferentImages`, `compareProductInfo`, `sortItems`
 
 ### Modificado
 

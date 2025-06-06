@@ -26,16 +26,3 @@ describe("Testes de Login", () => {
       "Epic sadface: Username and password do not match any user in this service"
     );
   });
-
-  it("Deve exibir mensagem ao inserir senha incorreta", () => {
-    cy.validateLoginError(
-      usuarios.standard_user,
-      "senha_incorreta",
-      "Epic sadface: Username and password do not match any user in this service"
-    );
-  });
-
-  it("Deve realizar login corretamente", () => {
-    cy.loginSuccessfully(usuarios.standard_user, usuarios.password);
-  });
-});

@@ -1,20 +1,6 @@
 import "./commands/loginCommands";
 import "./commands/productCommands";
 
-// @ts-ignore
-Cypress.Commands.overwrite("type", (originalFn, subject, text, options) => {
-  if (options && options.log === false) {
-    Cypress.log({
-      //@ts-ignore
-      $el: subject,
-      name: "type",
-      message: "***",
-    });
-  }
-  //@ts-ignore
-  return originalFn(subject, text, options);
-});
-
 declare global {
   namespace Cypress {
     interface Chainable {
