@@ -1,5 +1,11 @@
 # Histórico de Versões
 
+## [0.2.1] - 06-06-2025
+
+### Corrigido
+
+- Correção no arquivo `History.md`.
+
 ## [0.2.0] - 06-06-2025
 
 ### Adicionado
