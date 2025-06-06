@@ -1,0 +1,19 @@
+{
+  "name": "greennchallenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:gui": "cypress open",
+    "test:report": "cypress run --reporter mochawesome"
+  },
+  "keywords": [],
+  "author": "Marcos Henrique",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
