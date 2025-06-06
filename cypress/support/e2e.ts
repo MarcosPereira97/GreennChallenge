@@ -14,18 +14,4 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import "./commands";
-
-declare global {
-  var usuarios: {
-    standard_user: string;
-    problem_user: string;
-    password: string;
-  };
-}
-
-before(() => {
-  cy.fixture("usuarios").then((dados) => {
-    globalThis.usuarios = dados;
-  });
-});
+import './commands'

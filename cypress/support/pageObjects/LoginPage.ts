@@ -12,8 +12,4 @@ export class LoginPage {
   getLoginButton() {
     return cy.get(SELECTORS.login.login_btn);
   }
-
-  getErrorMessage() {
-    return cy.get(SELECTORS.login.message_error);
-  }
 }
