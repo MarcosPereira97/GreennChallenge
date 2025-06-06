@@ -1,6 +1,6 @@
 describe("Testes de Login", () => {
   beforeEach(() => {
-    cy.visit("/"); // ou sua URL de login
+    cy.visit("/");
   });
 
   it("Não deve permitir login com campo username em branco", () => {

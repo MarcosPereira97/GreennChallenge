@@ -29,7 +29,11 @@ declare global {
         password: string,
         expectedMessage: string
       ): Chainable<void>;
+      validateSameImages(): Chainable<void>;
       addProductToCart(): Chainable<void>;
+      validateDifferentImages(): Chainable<void>;
+      compareProductInfo(): Chainable<void>;
+      sortItems(sortOption: number): Chainable<void>;
     }
   }
 }

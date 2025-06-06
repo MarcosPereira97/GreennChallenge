@@ -1,5 +1,15 @@
 # Histórico de Versões
 
+## [0.3.0] - 06-06-2025
+
+### Adicionado
+
+- Testes de validação de produtos (ordenação de itens, validações de imagens, adicionar produtos ao carrinho.)
+
+### Modificado
+
+- Validações do elemento ocorrendo no arquivo de pageObjects ao invés no arquivo de commands.
+
 ## [0.2.1] - 06-06-2025
 
 ### Corrigido
