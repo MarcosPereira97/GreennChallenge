@@ -1,5 +1,11 @@
 # Histórico de Versões
 
+## [0.3.1] - 06-06-2025
+
+### Corrigido
+
+- Conflito de merge
+
 ## [0.3.0] - 06-06-2025
 
 ### Adicionado

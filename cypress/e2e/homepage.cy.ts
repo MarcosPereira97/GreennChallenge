@@ -1,9 +1,6 @@
 describe("Homepage Products - problem_user", () => {
   beforeEach(() => {
-    cy.fixture("usuarios").then((dados) => {
-      usuarios = dados;
-      cy.visit("/");
-    });
+    cy.visit("/");
   });
 
   it("Deve exibir imagens iguais para cada produto", () => {
@@ -14,7 +11,6 @@ describe("Homepage Products - problem_user", () => {
   it("Tentativa de adicionar qualquer produto ao carrinho", () => {
     cy.loginSuccessfully(usuarios.problem_user, usuarios.password);
     cy.addProductToCart();
-
   });
 
   it('Produto 4 exibe "Item Not Found" e valor com caracteres inválidos');

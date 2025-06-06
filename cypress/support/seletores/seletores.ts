@@ -5,6 +5,7 @@ export const SELECTORS = {
     username: "[data-test=username]",
     password: "[data-test=password]",
     login_btn: "[data-test=login-button]",
+    message_error: 'div[class*="error-message-container"]',
   },
   grid: {
     grid_list: "[data-test='inventory-list']",
