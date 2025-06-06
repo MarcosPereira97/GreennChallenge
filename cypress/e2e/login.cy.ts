@@ -1,15 +1,28 @@
-describe("Login", () => {
-  let usuarios: any;
-
+describe("Testes de Login", () => {
   beforeEach(() => {
-    cy.fixture("usuarios").then((dados) => {
-      usuarios = dados;
-      cy.visit("/");
-    });
+    cy.visit("/");
   });
 
-  it("Não deve permitir login com campo username em branco");
-  it("Não deve permitir login com campo password em branco");
-  it("Deve exibir mensagem ao inserir usuário incorreto");
-  it("Deve exibir mensagem ao inserir senha incorreta");
-});
+  it("Não deve permitir login com campo username em branco", () => {
+    cy.validateLoginError(
+      "",
+      usuarios.password,
+      "Epic sadface: Username is required"
+    );
+  });
+
+  it("Não deve permitir login com campo password em branco", () => {
+    cy.validateLoginError(
+      usuarios.standard_user,
+      "",
+      "Epic sadface: Password is required"
+    );
+  });
+
+  it("Deve exibir mensagem ao inserir usuário incorreto", () => {
+    cy.validateLoginError(
+      "usuario_invalido",
+      usuarios.password,
+      "Epic sadface: Username and password do not match any user in this service"
+    );
+  });

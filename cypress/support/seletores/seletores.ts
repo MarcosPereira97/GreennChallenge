@@ -11,8 +11,17 @@ export const SELECTORS = {
     grid_item: "[data-test='inventory-item']",
     add_to_cart_btn: "[data-test='add-to-cart-sauce-labs-backpack']",
     remove_to_cart_btn: "[data-test='remove-sauce-labs-backpack']",
+    grid_img: ".inventory_item_img",
+    pug_img: "img[src*='sl-404.168b1cce.jpg']",
+    backpack_img: "[data-test='inventory-item-sauce-labs-backpack-img']",
+    product_name: "[data-test='inventory-item-name']",
+    product_description: "[data-test='inventory-item-desc']",
+    product_price: "[data-test='inventory-item-price']",
+    img_detail: ".inventory_details_img",
+    sort_items: "[data-test='product-sort-container']",
   },
   cart: {
     cart_btn: "[data-test='shopping-cart-link']",
+    cart_badge: "[data-test='shopping-cart-badge']",
   },
 };
