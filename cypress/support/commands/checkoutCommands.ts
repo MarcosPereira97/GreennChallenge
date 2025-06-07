@@ -44,3 +44,11 @@ Cypress.Commands.add("finishCheckout", (data: CheckoutData) => {
     checkoutPage.getFinishedCheckout().should("contain", data.expectedMessage)
   );
 });
+
+Cypress.Commands.add("RemoveProductToCart", () => {
+  cy.accessCartPage();
+  cartPage.getRemoveBtn().click();
+  cartPage.getCartItems().then(() => {
+    expect(cartPage.getRemovedItem().should("exist"));
+  });
+});

@@ -1,5 +1,12 @@
 # Histórico de Versões
 
+## [0.6.0] - 07-06-2025
+
+### Adicionado
+
+- Mais um cenário do carrinho.
+- Criação de comando customizado `RemoveProductToCart.ts`
+
 ## [0.5.0] - 07-06-2025
 
 ### Adicionado

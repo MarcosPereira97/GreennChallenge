@@ -12,4 +12,16 @@ export class CartPage {
   getGotoCheckout() {
     return cy.getVisible(SELECTORS.cart.checkout_btn);
   }
+
+  getRemoveBtn() {
+    return cy.getVisible(SELECTORS.cart.remove_product_btn);
+  }
+
+  getCartItems() {
+    return cy.getVisible(SELECTORS.cart.cart_items);
+  }
+
+  getRemovedItem() {
+    return cy.get(SELECTORS.cart.removed_item);
+  }
 }
