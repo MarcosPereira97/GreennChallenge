@@ -1,10 +1,9 @@
-import { remove } from "cypress/types/lodash";
-
 export const SELECTORS = {
   login: {
     username: "[data-test=username]",
     password: "[data-test=password]",
     login_btn: "[data-test=login-button]",
+    message_error: 'div[class*="error-message-container"]',
   },
   grid: {
     grid_list: "[data-test='inventory-list']",
@@ -23,5 +22,17 @@ export const SELECTORS = {
   cart: {
     cart_btn: "[data-test='shopping-cart-link']",
     cart_badge: "[data-test='shopping-cart-badge']",
+    checkout_btn: "[data-test='checkout']",
+    back_btn: "[data-test='continue-shopping']",
+  },
+  checkout: {
+    first_name: "[data-test='firstName']",
+    last_name: "[data-test='lastName']",
+    zipcode: "[data-test='postalCode']",
+    cancel_btn: "[data-test='cancel']",
+    continue_btn: "[data-test='continue']",
+    message_error: 'div[class*="error-message-container"]',
+    finish_btn: "[data-test='finish']",
+    checkout_complete: "[data-test='checkout-complete-container']",
   },
 };

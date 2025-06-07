@@ -2,46 +2,46 @@ import { SELECTORS } from "../seletores/seletores";
 
 export class ProductPage {
   getGridList() {
-    return cy.get(SELECTORS.grid.grid_list).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.grid_list);
   }
 
   getGridItem() {
-    return cy.get(SELECTORS.grid.grid_item).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.grid_item);
   }
 
   getAddToCartButton() {
-    return cy.get(SELECTORS.grid.add_to_cart_btn).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.add_to_cart_btn);
   }
 
   getRemoveFromCartButton() {
-    return cy.get(SELECTORS.grid.remove_to_cart_btn).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.remove_to_cart_btn);
   }
 
   getProductImage() {
-    return cy.get(SELECTORS.grid.pug_img).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.pug_img);
   }
 
   getProductName() {
-    return cy.get(SELECTORS.grid.product_name).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.product_name);
   }
 
   getProductDescription() {
-    return cy.get(SELECTORS.grid.product_description).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.product_description);
   }
 
   getProductPrice() {
-    return cy.get(SELECTORS.grid.product_price).should("be.visible");
+    return cy.getVisible(SELECTORS.grid.product_price);
   }
 
   getImageDetail() {
-    return cy.get(SELECTORS.grid.img_detail);
+    return cy.getVisible(SELECTORS.grid.img_detail);
   }
 
   getGridImg() {
-    return cy.get(SELECTORS.grid.grid_img);
+    return cy.getVisible(SELECTORS.grid.grid_img);
   }
 
   getSortItems() {
-    return cy.get(SELECTORS.grid.sort_items);
+    return cy.getVisible(SELECTORS.grid.sort_items);
   }
 }

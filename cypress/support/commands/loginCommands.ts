@@ -1,10 +1,26 @@
+import { LoginData } from "cypress/interfaces/TestData";
 import { LoginPage } from "@pages/LoginPage";
 
-Cypress.Commands.add("login", (email: string, password: string) => {
-  const loginPage = new LoginPage();
+let loginPage = new LoginPage();
 
-  loginPage.getUsernameField().type(email);
-  loginPage.getPasswordField().type(password);
+Cypress.Commands.add("doLogin", (data?: LoginData) => {
+  if (data?.email) {
+    loginPage.getUsernameField().type(data.email);
+  }
+
+  if (data?.password) {
+    loginPage.getPasswordField().type(data.password, { log: false });
+  }
+
   loginPage.getLoginButton().click();
+});
+
+Cypress.Commands.add("loginSuccessfully", (data: LoginData) => {
+  cy.doLogin(data);
   cy.url().should("include", "/inventory.html");
+});
+
+Cypress.Commands.add("validateLoginError", (data: LoginData) => {
+  cy.doLogin(data);
+  loginPage.getErrorMessage().should("have.text", data.expectedMessage);
 });
