@@ -64,16 +64,22 @@ Cypress.Commands.add("compareProductInfo", () => {
   }).then(() => {
     cy.accessProductPage();
 
-    productPage.getProductName().should("have.text", productData.nome);
-    productPage
-      .getProductDescription()
-      .should("have.text", productData.descricao);
-    productPage.getProductPrice().should("have.text", productData.preco);
-    productPage
-      .getImageDetail()
-      .each(($img) =>
-        cy.wrap($img).should("have.attr", "src", productData.imagem)
-      );
+    expect(productPage.getProductName().should("have.text", productData.nome));
+    expect(
+      productPage
+        .getProductDescription()
+        .should("have.text", productData.descricao)
+    );
+    expect(
+      productPage.getProductPrice().should("have.text", productData.preco)
+    );
+    expect(
+      productPage
+        .getImageDetail()
+        .each(($img) =>
+          cy.wrap($img).should("have.attr", "src", productData.imagem)
+        )
+    );
   });
 });
 
@@ -93,23 +99,31 @@ Cypress.Commands.add("sortItems", (sortOption) => {
 
     productPage.getSortItems().select(sortOption);
 
-    productPage
-      .getProductName()
-      .first()
-      .should("not.have.text", productData.nome);
-    productPage
-      .getProductDescription()
-      .first()
-      .should("not.have.text", productData.descricao);
-    productPage
-      .getProductPrice()
-      .first()
-      .should("not.have.text", productData.preco);
-    productPage
-      .getGridImg()
-      .first()
-      .find("img")
-      .should("not.have.attr", "src", productData.imagem);
+    expect(
+      productPage
+        .getProductName()
+        .first()
+        .should("not.have.text", productData.nome)
+    );
+    expect(
+      productPage
+        .getProductDescription()
+        .first()
+        .should("not.have.text", productData.descricao)
+    );
+    expect(
+      productPage
+        .getProductPrice()
+        .first()
+        .should("not.have.text", productData.preco)
+    );
+    expect(
+      productPage
+        .getGridImg()
+        .first()
+        .find("img")
+        .should("not.have.attr", "src", productData.imagem)
+    );
   });
 });
 

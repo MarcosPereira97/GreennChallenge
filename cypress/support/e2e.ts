@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 
 import "./commands";
+import "@shelex/cypress-allure-plugin";
 
 declare global {
   var users: {
@@ -29,4 +30,15 @@ before(() => {
   cy.fixture("users").then((data) => {
     globalThis.users = data;
   });
+
+  if (Cypress.env("allure")) {
+    cy.allure().writeEnvironmentInfo({
+      Sistema: "Sauce Demo",
+      OS: Cypress.platform,
+      Browser: `${Cypress.browser.name} ${Cypress.browser.version}`,
+      CypressVersion: Cypress.version,
+      DataExecucao: new Date().toLocaleString("pt-BR"),
+      BaseURL: Cypress.config("baseUrl") || "N/A",
+    });
+  }
 });

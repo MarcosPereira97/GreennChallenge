@@ -17,6 +17,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.addProductToCart();
+    cy.screenshot();
   });
 
   it("Deve exibir imagens diferentes para cada produto", () => {
@@ -25,6 +26,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.validateDifferentImages();
+    cy.screenshot();
   });
 
   it("Deve permitir adicionar qualquer produto ao carrinho", () => {
@@ -33,6 +35,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.addProductToCart();
+    cy.screenshot();
   });
 
   it("Deve manter nome, valor e imagem consistentes entre homepage e página de detalhes", () => {
@@ -41,6 +44,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.compareProductInfo();
+    cy.screenshot();
   });
 
   it("Deve ordenar corretamente por nome (Z até A)", () => {
@@ -49,6 +53,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.sortItems(1);
+    cy.screenshot();
   });
 
   it("Deve ordenar corretamente por preço (menor para maior) ", () => {
@@ -57,6 +62,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.sortItems(2);
+    cy.screenshot();
   });
 
   it("Deve ordenar corretamente por preço (maior para Menor)", () => {
@@ -65,6 +71,7 @@ describe("Homepage Product", () => {
       password: users.password,
     });
     cy.sortItems(3);
+    cy.screenshot();
   });
 
   it('Produto 4 exibe "Item Not Found" e valor com caracteres inválidos');

@@ -29,6 +29,7 @@ describe("Checkout", () => {
       zipcode: "123",
       expectedMessage: "Error: Last Name is required",
     });
+    cy.screenshot();
   });
 
   it("Não deve permitir acessar o checkout com o campo zipcode em branco", () => {
@@ -43,6 +44,7 @@ describe("Checkout", () => {
       lastname: "qa",
       expectedMessage: "Error: Postal Code is required",
     });
+    cy.screenshot();
   });
 
   it("Deve ser possível finalizar o pedido", () => {
@@ -54,6 +56,7 @@ describe("Checkout", () => {
     cy.accessCartPage();
     cy.fillCheckoutForm({ username: "Test", lastname: "qa", zipcode: "123" });
     cy.finishCheckout({ expectedMessage: "Thank you for your order!" });
+    cy.screenshot();
   });
 
   it("Campo first name sendo apagado ao preencher campo last name", () => {
@@ -64,5 +67,6 @@ describe("Checkout", () => {
     cy.addProductToCart();
     cy.accessCartPage();
     cy.validateWord({ username: "QA", lastname: "test", zipcode: "1234" });
+    cy.screenshot();
   });
 });

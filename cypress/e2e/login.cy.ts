@@ -1,4 +1,4 @@
-describe("Testes de Login", () => {
+describe("Login", () => {
   beforeEach(() => {
     cy.visitSite({ url: "/" });
   });
@@ -8,6 +8,7 @@ describe("Testes de Login", () => {
       password: users.password,
       expectedMessage: "Epic sadface: Username is required",
     });
+    cy.screenshot();
   });
 
   it("Não deve permitir login com campo password em branco", () => {
@@ -15,6 +16,7 @@ describe("Testes de Login", () => {
       email: users.standard_user,
       expectedMessage: "Epic sadface: Password is required",
     });
+    cy.screenshot();
   });
 
   it("Deve exibir mensagem ao inserir usuário incorreto", () => {
@@ -24,6 +26,7 @@ describe("Testes de Login", () => {
       expectedMessage:
         "Epic sadface: Username and password do not match any user in this service",
     });
+    cy.screenshot();
   });
 
   it("Deve exibir mensagem ao inserir senha incorreta", () => {
@@ -33,6 +36,7 @@ describe("Testes de Login", () => {
       expectedMessage:
         "Epic sadface: Username and password do not match any user in this service",
     });
+    cy.screenshot();
   });
 
   it("Deve realizar login corretamente", () => {
@@ -40,5 +44,6 @@ describe("Testes de Login", () => {
       email: users.standard_user,
       password: users.password,
     });
+    cy.screenshot();
   });
 });
