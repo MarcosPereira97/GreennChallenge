@@ -1,5 +1,12 @@
 # Histórico de Versões
 
+## [0.6.1] - 07-06-2025
+
+### Corrigido
+
+- Removendo função `.only` que ficou no teste.
+- Adicionando função `.screenshot()` ao final do teste para tirar prints ao finalizar de executar o teste.
+
 ## [0.6.0] - 07-06-2025
 
 ### Adicionado

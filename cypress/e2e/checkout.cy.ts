@@ -3,10 +3,14 @@ describe("Checkout", () => {
     cy.visitSite({ url: "/" });
   });
 
-  it.only('Deve ser possível remover um produto do carrinho', () => {
-    cy.loginSuccessfully({email: users.standard_user, password: users.password})
-    cy.addProductToCart()
-    cy.RemoveProductToCart()
+  it("Deve ser possível remover um produto do carrinho", () => {
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.RemoveProductToCart();
+    cy.screenshot();
   });
 
   it("Não deve permitir acessar o checkout com o campo username em branco", () => {
