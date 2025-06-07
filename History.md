@@ -1,5 +1,15 @@
 # Histórico de Versões
 
+## [0.5.0] - 07-06-2025
+
+### Adicionado
+
+- Allure reports
+
+### Modificado
+
+- Adicionado função `.screenshot()` após a finalização dos cenários para adicionar os prints no relatório do allure.
+
 ## [0.4.0] - 07-06-2025
 
 ### Adicionado
