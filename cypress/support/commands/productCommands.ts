@@ -6,6 +6,13 @@ let cartPage = new CartPage();
 
 let firstImageSrc: string;
 
+let productData: {
+  nome: string;
+  descricao: string;
+  preco: string;
+  imagem: string;
+};
+
 Cypress.Commands.add("validateSameImages", () => {
   productPage
     .getProductImage()
@@ -47,13 +54,6 @@ Cypress.Commands.add("addProductToCart", () => {
 });
 
 Cypress.Commands.add("compareProductInfo", () => {
-  let productData: {
-    nome: string;
-    descricao: string;
-    preco: string;
-    imagem: string;
-  };
-
   cy.then(() => {
     productData = {
       nome: Cypress.$(".inventory_item_name").first().text(),
@@ -62,7 +62,7 @@ Cypress.Commands.add("compareProductInfo", () => {
       imagem: Cypress.$(".inventory_item img").first().attr("src") || "",
     };
   }).then(() => {
-    productPage.getProductName().first().click();
+    cy.accessProductPage();
 
     productPage.getProductName().should("have.text", productData.nome);
     productPage
@@ -78,13 +78,6 @@ Cypress.Commands.add("compareProductInfo", () => {
 });
 
 Cypress.Commands.add("sortItems", (sortOption) => {
-  let productData: {
-    nome: string;
-    descricao: string;
-    preco: string;
-    imagem: string;
-  };
-
   cy.then(() => {
     productData = {
       nome: Cypress.$(".inventory_item_name").first().text(),
@@ -118,4 +111,12 @@ Cypress.Commands.add("sortItems", (sortOption) => {
       .find("img")
       .should("not.have.attr", "src", productData.imagem);
   });
+});
+
+Cypress.Commands.add("accessProductPage", () => {
+  productPage.getProductName().first().click();
+});
+
+Cypress.Commands.add("accessCartPage", () => {
+  cartPage.getCartButton().click();
 });

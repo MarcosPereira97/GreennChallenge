@@ -1,5 +1,68 @@
 describe("Checkout", () => {
-  it("Campo last name não deve apagar o first name");
-  it("Campo last name deve aceitar mais de uma letra");
-  it("Campo zipcode deve aceitar apenas números válidos");
+  beforeEach(() => {
+    cy.visitSite({ url: "/" });
+  });
+
+  it("Não deve permitir acessar o checkout com o campo username em branco", () => {
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.accessCartPage();
+    cy.validateCheckoutError({
+      lastname: "qa",
+      zipcode: "123",
+      expectedMessage: "Error: First Name is required",
+    });
+  });
+
+  it("Não deve permitir acessar o checkout com o campo lastname em branco", () => {
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.accessCartPage();
+    cy.validateCheckoutError({
+      username: "Test",
+      zipcode: "123",
+      expectedMessage: "Error: Last Name is required",
+    });
+  });
+
+  it("Não deve permitir acessar o checkout com o campo zipcode em branco", () => {
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.accessCartPage();
+    cy.validateCheckoutError({
+      username: "Test",
+      lastname: "qa",
+      expectedMessage: "Error: Postal Code is required",
+    });
+  });
+
+  it("Deve ser possível finalizar o pedido", () => {
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.accessCartPage();
+    cy.fillCheckoutForm({ username: "Test", lastname: "qa", zipcode: "123" });
+    cy.finishCheckout({ expectedMessage: "Thank you for your order!" });
+  });
+
+  it("Campo first name sendo apagado ao preencher campo last name", () => {
+    cy.loginSuccessfully({
+      email: users.problem_user,
+      password: users.password,
+    });
+    cy.addProductToCart();
+    cy.accessCartPage();
+    cy.validateWord({ username: "QA", lastname: "test", zipcode: "1234" });
+  });
 });

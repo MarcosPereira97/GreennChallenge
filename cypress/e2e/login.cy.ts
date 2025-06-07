@@ -1,41 +1,44 @@
 describe("Testes de Login", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visitSite({ url: "/" });
   });
 
   it("Não deve permitir login com campo username em branco", () => {
-    cy.validateLoginError(
-      "",
-      usuarios.password,
-      "Epic sadface: Username is required"
-    );
+    cy.validateLoginError({
+      password: users.password,
+      expectedMessage: "Epic sadface: Username is required",
+    });
   });
 
   it("Não deve permitir login com campo password em branco", () => {
-    cy.validateLoginError(
-      usuarios.standard_user,
-      "",
-      "Epic sadface: Password is required"
-    );
+    cy.validateLoginError({
+      email: users.standard_user,
+      expectedMessage: "Epic sadface: Password is required",
+    });
   });
 
   it("Deve exibir mensagem ao inserir usuário incorreto", () => {
-    cy.validateLoginError(
-      "usuario_invalido",
-      usuarios.password,
-      "Epic sadface: Username and password do not match any user in this service"
-    );
+    cy.validateLoginError({
+      email: "invalid_user",
+      password: users.password,
+      expectedMessage:
+        "Epic sadface: Username and password do not match any user in this service",
+    });
   });
 
   it("Deve exibir mensagem ao inserir senha incorreta", () => {
-    cy.validateLoginError(
-      usuarios.standard_user,
-      "senha_incorreta",
-      "Epic sadface: Username and password do not match any user in this service"
-    );
+    cy.validateLoginError({
+      email: users.standard_user,
+      password: "wrong_password",
+      expectedMessage:
+        "Epic sadface: Username and password do not match any user in this service",
+    });
   });
 
   it("Deve realizar login corretamente", () => {
-    cy.loginSuccessfully(usuarios.standard_user, usuarios.password);
+    cy.loginSuccessfully({
+      email: users.standard_user,
+      password: users.password,
+    });
   });
 });

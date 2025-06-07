@@ -2,18 +2,18 @@ import { SELECTORS } from "../seletores/seletores";
 
 export class LoginPage {
   getUsernameField() {
-    return cy.get(SELECTORS.login.username);
+    return cy.getVisible(SELECTORS.login.username);
   }
 
   getPasswordField() {
-    return cy.get(SELECTORS.login.password);
+    return cy.getVisible(SELECTORS.login.password);
   }
 
   getLoginButton() {
-    return cy.get(SELECTORS.login.login_btn);
+    return cy.getVisible(SELECTORS.login.login_btn);
   }
 
   getErrorMessage() {
-    return cy.get(SELECTORS.login.message_error);
+    return cy.getVisible(SELECTORS.login.message_error);
   }
 }

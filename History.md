@@ -1,5 +1,19 @@
 # Histórico de Versões
 
+## [0.4.0] - 07-06-2025
+
+### Adicionado
+
+- Testes de validação de checkout (Finalizar pedido, validações do formulário de checkout)
+- Comando customizados: `fillCheckoutForm`, `validateCheckoutError` e `finishCheckout`.
+- Criado arquivo `TestData.ts` para ajudar na centralizar os dados em único arquivo, auxiliando o preenchimento apenas dos campos que são necessários para o teste e além de tudo é mais seguro.
+- Criações de métodos customizados para retornar elementos e tornar o código menos repetitivo.
+
+### Modificado
+
+- Criação da função `visitSite` apenas para fazer a limpeza de cache antes de cada teste.
+- Adequação de todos os testes para utilizar o padrão de interfaces.
+
 ## [0.3.1] - 06-06-2025
 
 ### Corrigido

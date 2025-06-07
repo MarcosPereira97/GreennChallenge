@@ -18,7 +18,7 @@
 import "./commands";
 
 declare global {
-  var usuarios: {
+  var users: {
     standard_user: string;
     problem_user: string;
     password: string;
@@ -26,7 +26,7 @@ declare global {
 }
 
 before(() => {
-  cy.fixture("usuarios").then((dados) => {
-    globalThis.usuarios = dados;
+  cy.fixture("users").then((data) => {
+    globalThis.users = data;
   });
 });

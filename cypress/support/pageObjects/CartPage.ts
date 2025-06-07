@@ -2,10 +2,14 @@ import { SELECTORS } from "../seletores/seletores";
 
 export class CartPage {
   getCartButton() {
-    return cy.get(SELECTORS.cart.cart_btn).should("be.visible");
+    return cy.getVisible(SELECTORS.cart.cart_btn);
   }
 
   getCartBadge() {
-    return cy.get(SELECTORS.cart.cart_badge).should("be.visible");
+    return cy.getVisible(SELECTORS.cart.cart_badge);
+  }
+
+  getGotoCheckout() {
+    return cy.getVisible(SELECTORS.cart.checkout_btn);
   }
 }
