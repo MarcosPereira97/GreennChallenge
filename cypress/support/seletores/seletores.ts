@@ -24,6 +24,9 @@ export const SELECTORS = {
     cart_badge: "[data-test='shopping-cart-badge']",
     checkout_btn: "[data-test='checkout']",
     back_btn: "[data-test='continue-shopping']",
+    remove_product_btn: "[data-test='remove-sauce-labs-backpack']",
+    cart_items: "[data-test='cart-list']",
+    removed_item: ".removed_cart_item"
   },
   checkout: {
     first_name: "[data-test='firstName']",
