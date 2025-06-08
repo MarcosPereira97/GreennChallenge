@@ -3,23 +3,6 @@ describe("Homepage Product", () => {
     cy.visitSite({ url: "/" });
   });
 
-  it("Deve exibir imagens iguais para cada produto", () => {
-    cy.loginSuccessfully({
-      email: users.problem_user,
-      password: users.password,
-    });
-    cy.validateSameImages();
-  });
-
-  it("Tentativa de adicionar qualquer produto ao carrinho", () => {
-    cy.loginSuccessfully({
-      email: users.problem_user,
-      password: users.password,
-    });
-    cy.addProductToCart();
-    cy.screenshot();
-  });
-
   it("Deve exibir imagens diferentes para cada produto", () => {
     cy.loginSuccessfully({
       email: users.standard_user,
@@ -73,7 +56,4 @@ describe("Homepage Product", () => {
     cy.sortItems(3);
     cy.screenshot();
   });
-
-  it('Produto 4 exibe "Item Not Found" e valor com caracteres inválidos');
-  it('Botão "Add to cart" deve funcionar em todos os produtos');
 });

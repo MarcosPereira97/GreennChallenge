@@ -51,6 +51,7 @@ declare global {
       validateCheckoutError(data: CheckoutData): Chainable<void>;
       validateWord(data: CheckoutData): Chainable<void>;
       visitSite(data: URL): Chainable<void>;
+      RemoveProductToCart(): Chainable<void>;
     }
   }
 }
