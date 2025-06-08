@@ -73,7 +73,4 @@ describe("Homepage Product", () => {
     cy.sortItems(3);
     cy.screenshot();
   });
-
-  it('Produto 4 exibe "Item Not Found" e valor com caracteres inválidos');
-  it('Botão "Add to cart" deve funcionar em todos os produtos');
 });
