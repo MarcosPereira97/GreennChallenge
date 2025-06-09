@@ -37,8 +37,8 @@ Automação de testes E2E para o sistema **SauceDemo** desenvolvida com Cypress 
 
 ### 3. Instalar Dependências do Projeto
 ```bash
-git clone [https://github.com/MarcosPereira97/GreennChallenge]
-cd greenn-challenge-qa
+git clone https://github.com/MarcosPereira97/GreennChallenge
+cd GreennChallenge
 
 # Instale as dependências
 npm install
