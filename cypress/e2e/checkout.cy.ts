@@ -25,6 +25,7 @@ describe("Checkout", () => {
       zipcode: "123",
       expectedMessage: "Error: First Name is required",
     });
+    cy.screenshot();
   });
 
   it("Não deve permitir acessar o checkout com o campo lastname em branco", () => {
